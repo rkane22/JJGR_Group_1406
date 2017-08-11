@@ -1,5 +1,7 @@
 import java.util.HashMap;
 
+import jdk.nashorn.internal.runtime.OptimisticBuiltins;
+
 public class Card implements Comparable<Card>{
   
   /* handy arrays for ranks and suits    */
@@ -28,6 +30,20 @@ public class Card implements Comparable<Card>{
 				this.rankValue.put(RANKS[r], r);
 			}
 	 }
+	//takes discard pile as input
+	//returns true if the card is a valid play and false if it is not
+	public boolean validPLay(DiscardPile top){
+		Card topCard = top.top();
+		if(topCard.suit.equals(this.suit)){
+			return true;
+		}else{
+			if(topCard.rank.equals(this.rank)||this.rank.equals(Card.RANKS[8])){
+				return true;
+			}else{
+				return false;
+			}
+		}
+	}
   
   /** the numerical representation of the rank of the current card
 	 *  <p>
