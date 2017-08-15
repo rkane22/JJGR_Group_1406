@@ -3,7 +3,8 @@ import java.util.Arrays;
 import java.util.Stack;
 import java.util.Random;
 
-public class Crazy8Game{
+public class Crazy8Game
+{
 
 	public static void main(String[] args){
 		
@@ -28,12 +29,12 @@ public class Crazy8Game{
 		
 		/* players in the game */
 		Player[] players = new Player[3];
-		players[0] = new BadPlayer( Arrays.copyOfRange(deck, 0, 5) );
+		players[0] = new MindTheEights( Arrays.copyOfRange(deck, 0, 5) );
 		System.out.println("0 : " + Arrays.toString( Arrays.copyOfRange(deck, 0, 5))); 
-		players[1] = new BadPlayer( Arrays.copyOfRange(deck, 5, 10) );
-		System.out.println("0 : " + Arrays.toString( Arrays.copyOfRange(deck, 5, 10))); 
-		players[2] = new BadPlayer( Arrays.copyOfRange(deck, 10, 15) );
-		System.out.println("0 : " + Arrays.toString( Arrays.copyOfRange(deck, 10, 15))); 
+		players[1] = new RandomPlayer( Arrays.copyOfRange(deck, 5, 10) );
+		System.out.println("1 : " + Arrays.toString( Arrays.copyOfRange(deck, 5, 10)));
+		players[2] = new RandomPlayer( Arrays.copyOfRange(deck, 10, 15) );
+		System.out.println("2 : " + Arrays.toString( Arrays.copyOfRange(deck, 10, 15)));
 		
 		
 		/* discard and draw piles */
@@ -61,8 +62,8 @@ public class Crazy8Game{
 
 			win = people.get(player).play(discardPile, drawPile, people);
 
-			System.out.println("draw pile   : " + drawPile.peek() );
-			System.out.println("discard pile : " + discardPile.top() );
+			//System.out.println("draw pile   : " + drawPile.peek() );
+			//System.out.println("discard pile : " + discardPile.top() );
 			
 		}
 		System.out.println("winner is player " + player);
