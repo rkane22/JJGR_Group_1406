@@ -41,7 +41,7 @@ public class HamperLeader extends Player{
     return null;
   }
 
-  //check the next player is not a leader
+  //check whether the next player is a leader
   public boolean nextIsLeader(ArrayList<Player> players){
     for(int i=0; i< players.size(); i++){
       if(players.get(i).getSizeOfHand()> players.get(i+1).getSizeOfHand()){
@@ -53,7 +53,7 @@ public class HamperLeader extends Player{
     return false;
   }
 
-  //check the previous is not a leader
+  //check whether the previous player a leader
   public boolean preIsLeader(ArrayList<Player> players){
     for (int i=1; i< players.size()-1; i+=1){
       if(players.get(i).getSizeOfHand()> players.get(i-1).getSizeOfHand()){
