@@ -17,8 +17,6 @@ public class HamperLeaderTest{
     Card[] basic = { new Card("Clubs", "10"), new Card("Spades", "7"), new Card("Diamonds", "9"), new Card("Hearts", "8")};
     Card[] oneCard = {new Card("Spades", "10")};
     Card[] twoCards = {new Card("Diamonds", "Ace"), new Card("Diamonds", "Queen")};
-    Card[] threeCards = {new Card("Hearts", "Queen"), new Card("Hearts", "King"), new Card("Hearts", "Jack")};
-    Card[] winningHand = {new Card("Diamonds", "Ace"), new Card("Diamonds", "Queen"), new Card("Diamonds", "Queen"), new Card("Clubs", "Queen"), new Card("Clubs", "King"), new Card("Diamonds", "8")};
 
     HamperLeader player= new HamperLeader(basic);
 
